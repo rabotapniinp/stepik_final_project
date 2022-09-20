@@ -16,7 +16,6 @@ def test_guest_can_add_product_to_basket(browser):
     page.solve_quiz_and_get_code() # считаем результат математического выражения и вводим ответ
     page.should_be_added_to_basket_by_name() # проверка, что товар добавлен в корзину. Название товара в сообщении должно совпадать с тем товаром, который действительно добавили
     page.should_be_added_to_basket_by_price() # проверка, что стоимость корзины совпадает с ценой товара
-    page.should_disappear_of_success_message() # ожидаем, что элемент присутствует на странице и должен исчезнуть
 
 @pytest.mark.xfail
 def test_guest_cant_see_success_message_after_adding_product_to_basket(browser):
@@ -95,4 +94,3 @@ class TestUserAddToBasketFromProductPage:
         page.solve_quiz_and_get_code()
         page.should_be_added_to_basket_by_name()
         page.should_be_added_to_basket_by_price()
-        page.should_disappear_of_success_message()
